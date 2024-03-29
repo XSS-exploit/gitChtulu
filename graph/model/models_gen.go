@@ -18,7 +18,7 @@ type BranchDeleteStatus struct {
 	Status string `json:"status"`
 }
 
-// Details about the repo data stored in gitconvex JSON data file
+// Details about the repo data stored in gitcthulu JSON data file
 type FetchRepoParams struct {
 	// UUID based ID generated for the repo
 	RepoID []*string `json:"repoId"`
@@ -26,7 +26,7 @@ type FetchRepoParams struct {
 	RepoName []*string `json:"repoName"`
 	// Path of the git repository
 	RepoPath []*string `json:"repoPath"`
-	// Timestamp at which the repo was added to gitconvex
+	// Timestamp at which the repo was added to gitcthulu
 	TimeStamp []*string `json:"timeStamp"`
 }
 
@@ -77,12 +77,12 @@ type GitRepoStatusResults struct {
 	GitTotalTrackedFiles *int `json:"gitTotalTrackedFiles"`
 }
 
-// Returns the host OS and the current version of gitconvex
+// Returns the host OS and the current version of gitcthulu
 type HealthCheckParams struct {
-	// OS on which gitconvex is running
+	// OS on which gitcthulu is running
 	Os string `json:"os"`
-	// Current version of gitconvex
-	Gitconvex string `json:"gitconvex"`
+	// Current version of gitcthulu
+	gitcthulu string `json:"gitcthulu"`
 }
 
 // Result of the remote pull operation
@@ -115,7 +115,7 @@ type CodeFileType struct {
 	FileData []*string `json:"fileData"`
 }
 
-// Result returned after attempting to delete a repo entry from the gitconvex data file
+// Result returned after attempting to delete a repo entry from the gitcthulu data file
 type DeleteStatus struct {
 	// String based status denoting the outcome of the delete
 	Status string `json:"status"`
@@ -177,10 +177,10 @@ type RemoteMutationResult struct {
 	Status string `json:"status"`
 }
 
-// The current path of the data fle and the port to which gitconvex server listens
+// The current path of the data fle and the port to which gitcthulu server listens
 type SettingsDataResults struct {
 	// The path of the JSON data file
 	SettingsDatabasePath string `json:"settingsDatabasePath"`
-	// The current port that gitconvex is configured to listen
+	// The current port that gitcthulu is configured to listen
 	SettingsPortDetails string `json:"settingsPortDetails"`
 }

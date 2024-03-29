@@ -3,13 +3,13 @@ package api
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/neel1996/gitconvex-server/global"
-	"github.com/neel1996/gitconvex-server/graph/model"
-	"github.com/neel1996/gitconvex-server/utils"
+	"github.com/neel1996/gitcthulu-server/global"
+	"github.com/neel1996/gitcthulu-server/graph/model"
+	"github.com/neel1996/gitcthulu-server/utils"
 	"time"
 )
 
-// FetchRepo reads the gitconvex datafile (repo_datastore.json) and returns the stored information
+// FetchRepo reads the gitcthulu datafile (repo_datastore.json) and returns the stored information
 // in the form of categorized array items
 func FetchRepo() *model.FetchRepoParams {
 	var (

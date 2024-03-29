@@ -3,9 +3,9 @@ package api
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/neel1996/gitconvex-server/global"
-	"github.com/neel1996/gitconvex-server/graph/model"
-	"github.com/neel1996/gitconvex-server/utils"
+	"github.com/neel1996/gitcthulu-server/global"
+	"github.com/neel1996/gitcthulu-server/graph/model"
+	"github.com/neel1996/gitcthulu-server/utils"
 	"io/ioutil"
 	"os"
 	"path/filepath"
@@ -101,7 +101,7 @@ func reportError(repoId string, errMsg string, errString string) *model.DeleteSt
 }
 
 // DeleteRepo deletes a repo entry from the env_config json file
-// This will just remove the record for gitconvex alone and disturbs the repo in no other way
+// This will just remove the record for gitcthulu alone and disturbs the repo in no other way
 func DeleteRepo(repoId string) *model.DeleteStatus {
 	var repoData []RepoData
 	var newRepoData []RepoData

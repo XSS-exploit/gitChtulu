@@ -24,7 +24,7 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots to help explain your problem.
 
 **Command Line Logs**
-Gitconvex displays logs in the command line. Please paste the error logs below
+gitcthulu displays logs in the command line. Please paste the error logs below
 
 ```
 # Error Logs...

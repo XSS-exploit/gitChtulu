@@ -13,13 +13,13 @@ if "%ip%"==%INSTALL% (
 )
 
 if "%ip%"==%BUILD% (
-	echo ⚒ Initiating gitconvex build for windows
+	echo ⚒ Initiating gitcthulu build for windows
 	echo 🗑 Cleaning up unwanted folders
 	rd /s /q ui
 	rd /s /q dist
 	rd /s /q build
-    echo ⏳ Cloning UI package from github gitconvex-ui/master
-    git clone -q https://github.com/neel1996/gitconvex-ui.git ui/
+    echo ⏳ Cloning UI package from github gitcthulu-ui/master
+    git clone -q https://github.com/neel1996/gitcthulu-ui.git ui/
     cd ui
     echo ⏳ Installing UI dependencies
 	del package-lock.json
@@ -29,25 +29,25 @@ if "%ip%"==%BUILD% (
     npm install tailwindcss postcss autoprefixer
     npx tailwindcss build -o src/index.css -c src/tailwind.config.js
     npm run build
-	echo 🔹 Moving react bundle to gitconvex-ui
-    move .\build gitconvex-ui
-    move .\gitconvex-ui ..\
+	echo 🔹 Moving react bundle to gitcthulu-ui
+    move .\build gitcthulu-ui
+    move .\gitcthulu-ui ..\
     cd ..
     mkdir .\dist
 	echo 🔹 Moving UI artifacts to dist folder
-    move .\gitconvex-ui .\dist\
+    move .\gitcthulu-ui .\dist\
     echo 🔹 Copying etc content to dist
     xcopy /E /I .\etc\ .\dist\etc\
     copy .\etc\git2.dll .\dist\
 	echo 🔸 Removing intermediary folder ui/
 	rd /s /q ui
-    echo 🚀 Building gitconvex bundle
-    go build -o ./dist/gitconvex.exe
+    echo 🚀 Building gitcthulu bundle
+    go build -o ./dist/gitcthulu.exe
 	cd .\dist
-    rename gitconvex-server.exe gitconvex.exe
-    echo ✅ Gitconvex Build Completed successfully!
-	echo 📬 Run ./dist/gitconvex.exe to start gitconvex on port 9001
-	echo 📬 Try ./dist/gitconvex.exe --port PORT_NUMBER to run gitconvex on the desired port
+    rename gitcthulu-server.exe gitcthulu.exe
+    echo ✅ gitcthulu Build Completed successfully!
+	echo 📬 Run ./dist/gitcthulu.exe to start gitcthulu on port 9001
+	echo 📬 Try ./dist/gitcthulu.exe --port PORT_NUMBER to run gitcthulu on the desired port
 	cd ..
 )
 
@@ -60,5 +60,5 @@ if "%ip%"==%RUN% (
 )
 
 if "%ip%"==%START% (
-	.\dist\gitconvex.exe
+	.\dist\gitcthulu.exe
 )

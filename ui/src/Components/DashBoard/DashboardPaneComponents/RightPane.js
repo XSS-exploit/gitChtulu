@@ -10,7 +10,7 @@ export default function RightPane(props) {
       value: platform,
     },
     {
-      label: "Gitconvex",
+      label: "gitcthulu",
       value: gitVersion,
     },
   ];

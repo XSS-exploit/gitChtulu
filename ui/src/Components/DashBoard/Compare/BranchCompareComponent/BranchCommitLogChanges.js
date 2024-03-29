@@ -27,7 +27,7 @@ export default function BranchCommitLogChanges(props) {
       method: "POST",
       data: {
         query: `
-          query GitConvexApi {
+          query gitcthuluApi {
               branchCompare ( repoId: "${repoId}", baseBranch: "${baseBranch}", compareBranch: "${compareBranch}"){
                 date
                 commits{

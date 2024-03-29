@@ -24,7 +24,7 @@ export default function SplashScreen(props) {
           query{
             healthCheck{
               os
-              gitconvex
+              gitcthulu
             }
           }
         `,
@@ -32,13 +32,13 @@ export default function SplashScreen(props) {
     })
       .then((res) => {
         if (res.data.data) {
-          const { os, gitconvex } = res.data.data.healthCheck;
+          const { os, gitcthulu } = res.data.data.healthCheck;
 
           dispatch({
             type: HC_PARAM_ACTION,
             payload: {
               os,
-              gitconvex,
+              gitcthulu,
             },
           });
           setHcCheck(true);
@@ -65,10 +65,10 @@ export default function SplashScreen(props) {
                 <span className="logo-label__title-first font-sans font-bold mx-3">
                   Git
                 </span>
-                <span>Convex</span>
+                <span>Cthulu</span>
               </div>
               <div className="block font-mono my-2">
-                A visualizer for your git repo
+                A better Git CLient
               </div>
             </div>
           </div>

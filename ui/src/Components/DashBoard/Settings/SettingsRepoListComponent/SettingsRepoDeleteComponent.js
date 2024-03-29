@@ -52,11 +52,11 @@ export default function SettingsRepoDeleteComponent(props) {
   return (
     <div className="w-3/4 p-6 mx-auto my-auto rounded shadow bg-white">
       <div className="mx-4 my-2 text-3xl font-sans text-gray-900">
-        The repo below will be removed from Gitconvex records.
+        The repo below will be removed from gitcthulu records.
       </div>
       <div className="mx-4 my-1 text-md font-light w-5/6 font-sans italic text-gray-800">
         This will not delete the actual git folder. Just the record from the
-        gitconvex server will be removed
+        gitcthulu server will be removed
       </div>
       <div className="my-2 mx-auto block justify-center w-3/4 p-2">
         {repoArray.map((item) => {

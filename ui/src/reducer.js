@@ -18,16 +18,16 @@ export default function reducer(state, action) {
         hcDone: action.payload,
       };
     case HC_PARAM_ACTION:
-      const { os, gitconvex } = action.payload;
+      const { os, gitcthulu } = action.payload;
 
       localStorage.setItem("OS_TYPE", os);
-      localStorage.setItem("GIT_VERSION", gitconvex);
+      localStorage.setItem("GIT_VERSION", gitcthulu);
 
       return {
         ...state,
         hcParams: {
           osCheck: os,
-          gitCheck: gitconvex,
+          gitCheck: gitcthulu,
         },
       };
     case PRESENT_REPO:

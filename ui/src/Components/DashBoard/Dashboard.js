@@ -66,7 +66,7 @@ export default function Dashboard(props) {
               query{
                 healthCheck{
                   os
-                  gitconvex
+                  gitcthulu
                 }
               }
             `,
@@ -74,10 +74,10 @@ export default function Dashboard(props) {
         })
           .then((res) => {
             if (res.data.data && !res.data.error) {
-              const { os, gitconvex } = res.data.data.gitConvexApi.healthCheck;
+              const { os, gitcthulu } = res.data.data.gitcthuluApi.healthCheck;
 
               setPlatform(JSON.parse(os).message);
-              setGitVersion(JSON.parse(gitconvex).message);
+              setGitVersion(JSON.parse(gitcthulu).message);
             }
           })
           .catch((err) => {

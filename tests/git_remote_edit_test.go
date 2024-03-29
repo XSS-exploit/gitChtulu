@@ -3,8 +3,8 @@ package tests
 import (
 	"fmt"
 	"github.com/libgit2/git2go/v31"
-	git2 "github.com/neel1996/gitconvex-server/git"
-	"github.com/neel1996/gitconvex-server/global"
+	git2 "github.com/neel1996/gitcthulu-server/git"
+	"github.com/neel1996/gitcthulu-server/global"
 	"github.com/stretchr/testify/assert"
 	"os"
 	"path"
@@ -41,7 +41,7 @@ func TestRemoteEditStruct_EditRemoteUrl(t *testing.T) {
 			Repo       *git.Repository
 			RemoteName string
 			RemoteUrl  string
-		}{Repo: r, RemoteName: "origin", RemoteUrl: "git@github.com:neel1996/gitconvex-server.git"}, want: global.RemoteEditSuccess},
+		}{Repo: r, RemoteName: "origin", RemoteUrl: "git@github.com:neel1996/gitcthulu-server.git"}, want: global.RemoteEditSuccess},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

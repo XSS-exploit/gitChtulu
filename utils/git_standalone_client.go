@@ -2,7 +2,7 @@ package utils
 
 import (
 	"fmt"
-	"github.com/neel1996/gitconvex-server/global"
+	"github.com/neel1996/gitcthulu-server/global"
 	"os/exec"
 	"runtime"
 	"strings"

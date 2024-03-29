@@ -71,7 +71,7 @@ export default function SettingsPortComponent() {
   return (
     <div className="my-2 mx-auto">
       <div className="text-xl font-sans text-gray-800 my-2">
-        Active Gitconvex port
+        Active gitcthulu port
       </div>
       <div className="flex my-4">
         <input

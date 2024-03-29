@@ -1,8 +1,8 @@
 package tests
 
 import (
-	"github.com/neel1996/gitconvex-server/api"
-	"github.com/neel1996/gitconvex-server/graph/model"
+	"github.com/neel1996/gitcthulu-server/api"
+	"github.com/neel1996/gitcthulu-server/graph/model"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
@@ -21,7 +21,7 @@ func TestHealthCheckApi(t *testing.T) {
 
 			got := api.HealthCheckApi()
 			assert.Contains(t, tt.want.Os, got.Os)
-			assert.NotEmpty(t, got.Gitconvex)
+			assert.NotEmpty(t, got.gitcthulu)
 		})
 	}
 }

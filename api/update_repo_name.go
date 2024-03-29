@@ -2,8 +2,8 @@ package api
 
 import (
 	"fmt"
-	"github.com/neel1996/gitconvex-server/global"
-	"github.com/neel1996/gitconvex-server/utils"
+	"github.com/neel1996/gitcthulu-server/global"
+	"github.com/neel1996/gitcthulu-server/utils"
 )
 
 // UpdateRepoName updates the repository name in the data store JSON file

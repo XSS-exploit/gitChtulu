@@ -1,6 +1,6 @@
 FROM golang:1.16.0
 
-WORKDIR /go/src/github.com/neel1996/gitconvex-server
+WORKDIR /go/src/github.com/neel1996/gitcthulu-server
 
 COPY . .
 
@@ -22,8 +22,8 @@ RUN cd ui/ && \
     npm install tailwindcss postcss autoprefixer && \
     npx tailwindcss build -o src/index.css -c src/tailwind.config.js && \
     npm run build && \
-    mv build/ gitconvex-ui/ && \
-    mv gitconvex-ui/ ../ && \
+    mv build/ gitcthulu-ui/ && \
+    mv gitcthulu-ui/ ../ && \
     cd .. && \
     rm -rf ui/
 
@@ -58,4 +58,4 @@ RUN apt-get remove cmake nodejs apt-transport-https ca-certificates gnupg softwa
 EXPOSE 9001
 
 CMD export PKG_CONFIG_PATH=/usr/local/lib && \
-    go run /go/src/github.com/neel1996/gitconvex-server/server.go
+    go run /go/src/github.com/neel1996/gitcthulu-server/server.go

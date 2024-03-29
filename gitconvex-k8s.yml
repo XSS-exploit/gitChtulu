@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gitconvex
+  name: gitcthulu
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: gitconvex
+      app: gitcthulu
   template:
     metadata:
       labels:
-        app: gitconvex
+        app: gitcthulu
     spec:
       containers:
-      - name: gitconvex
-        image: itassistors/gitconvex
+      - name: gitcthulu
+        image: itassistors/gitcthulu
         resources:
           limits:
             memory: "128Mi"

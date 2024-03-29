@@ -5,10 +5,10 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/google/uuid"
-	"github.com/neel1996/gitconvex-server/git"
-	"github.com/neel1996/gitconvex-server/global"
-	"github.com/neel1996/gitconvex-server/graph/model"
-	"github.com/neel1996/gitconvex-server/utils"
+	"github.com/neel1996/gitcthulu-server/git"
+	"github.com/neel1996/gitcthulu-server/global"
+	"github.com/neel1996/gitcthulu-server/graph/model"
+	"github.com/neel1996/gitcthulu-server/utils"
 	"go/types"
 	"golang.org/x/crypto/bcrypt"
 	"io/ioutil"
@@ -151,7 +151,7 @@ func (inputs AddRepoInputs) repoDataFileWriter(repoId string, repoAddStatus chan
 	}
 }
 
-// AddRepo function gets the repository details and includes a record to the gitconvex repo datastore file
+// AddRepo function gets the repository details and includes a record to the gitcthulu repo datastore file
 // If initSwitch is 'true' then the git repo init function will be invoked to initialize a new repo
 // If cloneSwitch is 'true' then the repo will be cloned to the file system using the repoURL field
 func (inputs AddRepoInputs) AddRepo() *model.AddRepoParams {
@@ -236,7 +236,7 @@ func (inputs AddRepoInputs) AddRepo() *model.AddRepoParams {
 		return &model.AddRepoParams{
 			RepoID:  repoId,
 			Status:  "Repo Added",
-			Message: "The new repository has been added to Gitconvex",
+			Message: "The new repository has been added to gitcthulu",
 		}
 	} else {
 		logger.Log("Failed to add new repo entry", global.StatusError)

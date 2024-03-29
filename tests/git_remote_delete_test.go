@@ -3,9 +3,9 @@ package tests
 import (
 	"fmt"
 	git "github.com/libgit2/git2go/v31"
-	git2 "github.com/neel1996/gitconvex-server/git"
-	"github.com/neel1996/gitconvex-server/global"
-	"github.com/neel1996/gitconvex-server/graph/model"
+	git2 "github.com/neel1996/gitcthulu-server/git"
+	"github.com/neel1996/gitcthulu-server/global"
+	"github.com/neel1996/gitcthulu-server/graph/model"
 	"github.com/stretchr/testify/assert"
 	"os"
 	"path"
@@ -33,7 +33,7 @@ func TestDeleteRemoteStruct_DeleteRemote(t *testing.T) {
 	testObj = git2.AddRemoteStruct{
 		Repo:       r,
 		RemoteName: testRemoteName,
-		RemoteURL:  "git@github.com:neel1996/gitconvex-server.git",
+		RemoteURL:  "git@github.com:neel1996/gitcthulu-server.git",
 	}
 	_ = testObj.AddRemote()
 

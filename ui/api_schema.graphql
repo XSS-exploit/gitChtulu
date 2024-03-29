@@ -1,6 +1,6 @@
 #######################################################################################
 #                                                                                     #
-# GraphQL schema for Gitconvex API                                                    #
+# GraphQL schema for gitcthulu API                                                    #
 # Generated with https://gqlgen.com/                                                  #
 #                                                                                     #
 # If you want to request for a new query / mutation to be created in the backend,     #
@@ -10,7 +10,7 @@
 
 type HealthCheckParams {
   os: String!
-  gitconvex: String!
+  gitcthulu: String!
 }
 
 type FetchRepoParams {

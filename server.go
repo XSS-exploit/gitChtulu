@@ -6,10 +6,10 @@ import (
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
 	"github.com/gorilla/mux"
-	"github.com/neel1996/gitconvex-server/global"
-	"github.com/neel1996/gitconvex-server/graph"
-	"github.com/neel1996/gitconvex-server/graph/generated"
-	"github.com/neel1996/gitconvex-server/utils"
+	"github.com/neel1996/gitcthulu-server/global"
+	"github.com/neel1996/gitcthulu-server/graph"
+	"github.com/neel1996/gitcthulu-server/graph/generated"
+	"github.com/neel1996/gitcthulu-server/utils"
 	"github.com/rs/cors"
 	"log"
 	"net/http"
@@ -23,9 +23,9 @@ var (
 )
 
 func main() {
-	// To get the current version of gitconvex
-	versionFlag := flag.Bool("version", false, "To get the current version of gitconvex")
-	argFlag := flag.String("port", "", "To define the port dynamically while starting gitconvex")
+	// To get the current version of gitcthulu
+	versionFlag := flag.Bool("version", false, "To get the current version of gitcthulu")
+	argFlag := flag.String("port", "", "To define the port dynamically while starting gitcthulu")
 	flag.Parse()
 
 	if *versionFlag == true {
@@ -37,7 +37,7 @@ func main() {
 	Port = 0
 
 	logger := global.Logger{}
-	logger.Log("Starting Gitconvex server modules", global.StatusInfo)
+	logger.Log("Starting gitcthulu server modules", global.StatusInfo)
 
 	// checks if the env_config file is accessible. If not then the EnvConfigFileGenerator will be invoked
 	// to generate a default env_config file
@@ -60,15 +60,15 @@ func main() {
 
 	srv := handler.NewDefaultServer(generated.NewExecutableSchema(generated.Config{Resolvers: &graph.Resolver{}}))
 
-	http.Handle("/gitconvexapi", playground.Handler("GraphQL playground", "/query"))
+	http.Handle("/gitcthuluapi", playground.Handler("GraphQL playground", "/query"))
 	http.Handle("/query", srv)
 
 	router := mux.NewRouter()
 
 	// http route handler for provisioning graphql playground UI when the API is directly opened from the browser
-	router.Path("/gitconvexapi/graph").Handler(playground.Handler("GraphQL", "/query"))
+	router.Path("/gitcthuluapi/graph").Handler(playground.Handler("GraphQL", "/query"))
 	router.Handle("/query", srv)
-	router.Handle("/gitconvexapi", srv)
+	router.Handle("/gitcthuluapi", srv)
 
 	execName, _ := os.Executable()
 	var (
@@ -77,7 +77,7 @@ func main() {
 	)
 	if execName != "" {
 		currentDir := filepath.Dir(execName)
-		buildPath = fmt.Sprintf("%s/gitconvex-ui", currentDir)
+		buildPath = fmt.Sprintf("%s/gitcthulu-ui", currentDir)
 		staticPath = fmt.Sprintf("%s/static", buildPath)
 	} else {
 		logger.Log("Unable to serve UI bundle", global.StatusError)
@@ -91,7 +91,7 @@ func main() {
 		cwd, _ := os.Getwd()
 		if cwd != "" {
 			logger.Log("Using UI bundle from the current directory -> "+cwd, global.StatusInfo)
-			buildPath = fmt.Sprintf("%s/gitconvex-ui", cwd)
+			buildPath = fmt.Sprintf("%s/gitcthulu-ui", cwd)
 			staticPath = fmt.Sprintf("%s/static", buildPath)
 		}
 	}
@@ -101,9 +101,9 @@ func main() {
 	router.PathPrefix("/static").Handler(http.StripPrefix("/static", http.FileServer(http.Dir(staticPath))))
 
 	// Route for serving the webpage logo from the reach build bundle
-	router.PathPrefix("/gitconvex.png").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+	router.PathPrefix("/gitcthulu.png").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		logger.Log(fmt.Sprintf("Serving logo from directory -> %s", buildPath), global.StatusInfo)
-		http.ServeFile(w, r, buildPath+"/gitconvex.png")
+		http.ServeFile(w, r, buildPath+"/gitcthulu.png")
 	})
 
 	// A default fallback route for handling all routes with '/' prefix.
@@ -125,10 +125,10 @@ func main() {
 	}
 
 	if Port > 0 {
-		logger.Log(fmt.Sprintf("Gitconvex started on  http://localhost:%v", Port), global.StatusInfo)
+		logger.Log(fmt.Sprintf("gitcthulu started on  http://localhost:%v", Port), global.StatusInfo)
 		log.Fatal(http.ListenAndServe(":"+strconv.Itoa(Port), cors.Default().Handler(router)))
 	} else {
-		logger.Log(fmt.Sprintf("Gitconvex started on  http://localhost:%v", global.DefaultPort), global.StatusInfo)
+		logger.Log(fmt.Sprintf("gitcthulu started on  http://localhost:%v", global.DefaultPort), global.StatusInfo)
 		log.Fatal(http.ListenAndServe(":"+global.DefaultPort, cors.Default().Handler(router)))
 	}
 }

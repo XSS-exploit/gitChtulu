@@ -38,7 +38,7 @@ export default function Help() {
     },
     {
       label: "reach via github",
-      link: "https://github.com/neel1996/gitconvex-package/issues",
+      link: "https://github.com/neel1996/gitcthulu-package/issues",
       icon: ["fab", "github"],
       color: ["bg-gray-800", "bg-gray-700"],
     },
@@ -52,15 +52,15 @@ export default function Help() {
 
   const contributionData = [
     {
-      label: "Gitconvex react project",
-      link: "https://github.com/neel1996/gitconvex-ui",
+      label: "gitcthulu react project",
+      link: "https://github.com/neel1996/gitcthulu-ui",
       icon: ["fab", "react"],
       color: ["bg-blue-400"],
       ind: "",
     },
     {
-      label: "Gitconvex Go project",
-      link: "https://github.com/neel1996/gitconvex-server",
+      label: "gitcthulu Go project",
+      link: "https://github.com/neel1996/gitcthulu-server",
       icon: GoLogo,
       color: ["bg-gray-700"],
       ind: "go",
@@ -73,7 +73,7 @@ export default function Help() {
     setLoading(true);
 
     const githubEndpoint =
-      "https://api.github.com/repos/neel1996/gitconvex/releases/latest";
+      "https://api.github.com/repos/neel1996/gitcthulu/releases/latest";
 
     axios({
       url: githubEndpoint,
@@ -113,7 +113,7 @@ export default function Help() {
         </span>
         <span className="font-mono text-xl mx-2 text-indigo-500 hover:text-indigo-600 hover:font-semibold cursor-pointer">
           <a
-            href="https://github.com/neel1996/gitconvex/blob/master/DOCUMENTATION.md"
+            href="https://github.com/neel1996/gitcthulu/blob/master/DOCUMENTATION.md"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -154,7 +154,7 @@ export default function Help() {
         <div className="text-2xl font-sans font-semibold">Contribution</div>
 
         <div className="font-sans font-light border-b border-dashed text-center text-gray-600 my-5 break-normal">
-          gitconvex is open source and please visit the repo if you are
+          gitcthulu is open source and please visit the repo if you are
           interested in contributing to the platform
         </div>
       </div>
@@ -225,7 +225,7 @@ export default function Help() {
 
             {isLatest ? (
               <div className="text-center text-sm font-sans font-light text-gray-600">
-                You are using the latest version of gitconvex
+                You are using the latest version of gitcthulu
               </div>
             ) : null}
 
@@ -242,7 +242,7 @@ export default function Help() {
                 </div>
                 <div className="p-4 rounded-lg my-2 text-lg font-sans text-center bg-pink-500 text-white">
                   <a
-                    href={`https://github.com/neel1996/gitconvex/releases/tag/${availableUpdate}`}
+                    href={`https://github.com/neel1996/gitcthulu/releases/tag/${availableUpdate}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

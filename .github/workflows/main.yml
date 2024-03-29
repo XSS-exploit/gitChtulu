@@ -1,4 +1,4 @@
-name: Gitconvex build deploy
+name: gitcthulu build deploy
 
 on: push
 
@@ -12,9 +12,9 @@ jobs:
           brew install libssh2
           brew install libgit2
 
-  gitconvex-test:
+  gitcthulu-test:
     needs: libgit2-setup-test
-    name: Gitconvex server test
+    name: gitcthulu server test
     runs-on: ubuntu-latest
     env:
       PKG_CONFIG_PATH: /home/linuxbrew/.linuxbrew/Cellar/libgit2/1.1.0/lib/pkgconfig/
@@ -43,8 +43,8 @@ jobs:
 
   # Build for Ubuntu Linux
   build-linux:
-    name: Build gitconvex for linux
-    needs: gitconvex-test
+    name: Build gitcthulu for linux
+    needs: gitcthulu-test
     runs-on: ubuntu-latest
     steps:
       - name: Set up Go 1.x
@@ -75,18 +75,18 @@ jobs:
 
       - name: Clone test repo
         run: |
-          mkdir -p /home/runner/work/gitconvex/starfleet/
-          git clone https://github.com/neel1996/starfleet.git /home/runner/work/gitconvex-server/starfleet/
+          mkdir -p /home/runner/work/gitcthulu/starfleet/
+          git clone https://github.com/neel1996/starfleet.git /home/runner/work/gitcthulu-server/starfleet/
 
       - name: Overwrite mock test file
         run: |
-          echo "# gitconvex GoLang project" > /home/runner/work/gitconvex/gitconvex/README.md
+          echo "# gitcthulu GoLang project" > /home/runner/work/gitcthulu/gitcthulu/README.md
 
-      - name: Package gitconvex bundle
+      - name: Package gitcthulu bundle
         run: |
           make build
           cd dist 
-          tar -czf gitconvex-linux-amd64-v${{ secrets.TARGET_RELEASE_CHANNEL }}.tar.gz *
+          tar -czf gitcthulu-linux-amd64-v${{ secrets.TARGET_RELEASE_CHANNEL }}.tar.gz *
           ls -ltr
           cd ..
 
@@ -95,12 +95,12 @@ jobs:
           gh version
           echo ${{ secrets.CLI_AUTH_KEY }} > auth.txt 
           gh auth login --with-token < auth.txt
-          gh release upload --repo ${{ secrets.USER_NAME }}/gitconvex ${{ secrets.TARGET_RELEASE_CHANNEL }} ./dist/gitconvex-linux-amd64-v${{ secrets.TARGET_RELEASE_CHANNEL }}.tar.gz --clobber
+          gh release upload --repo ${{ secrets.USER_NAME }}/gitcthulu ${{ secrets.TARGET_RELEASE_CHANNEL }} ./dist/gitcthulu-linux-amd64-v${{ secrets.TARGET_RELEASE_CHANNEL }}.tar.gz --clobber
 
   # Build for MacOS
   build-macos:
-    name: Build gitconvex for MacOS
-    needs: gitconvex-test
+    name: Build gitcthulu for MacOS
+    needs: gitcthulu-test
     runs-on: macos-latest
     steps:
       - name: Set up Go 1.x
@@ -118,22 +118,22 @@ jobs:
           brew install libgit2
           go get -v ./...
 
-      - name: Package gitconvex bundle
+      - name: Package gitcthulu bundle
         run: |
           make build
           cd dist 
-          tar -czf gitconvex-macos-amd64-v${{ secrets.TARGET_RELEASE_CHANNEL }}.tar.gz *
+          tar -czf gitcthulu-macos-amd64-v${{ secrets.TARGET_RELEASE_CHANNEL }}.tar.gz *
 
       - name: Github CLI Release for MacOS
         run: |
           echo ${{ secrets.CLI_AUTH_KEY }} > auth.txt
           gh auth login --with-token < auth.txt
-          gh release upload ${{ secrets.TARGET_RELEASE_CHANNEL }} ./dist/gitconvex-macos-amd64-v${{ secrets.TARGET_RELEASE_CHANNEL }}.tar.gz --clobber
+          gh release upload ${{ secrets.TARGET_RELEASE_CHANNEL }} ./dist/gitcthulu-macos-amd64-v${{ secrets.TARGET_RELEASE_CHANNEL }}.tar.gz --clobber
 
   # Test Build for Windows
   build-windows:
-    name: Build gitconvex for Windows
-    needs: gitconvex-test
+    name: Build gitcthulu for Windows
+    needs: gitcthulu-test
     runs-on: windows-latest
     defaults:
       run:
@@ -155,7 +155,7 @@ jobs:
           go-version: ^1.16
         id: go
 
-      - name: Build libgit2 and gitconvex
+      - name: Build libgit2 and gitcthulu
         run: |
           unzip -q ./lib/win/dep_libs.zip
           wget -q https://github.com/libgit2/libgit2/releases/download/v1.1.0/libgit2-1.1.0.zip
@@ -181,19 +181,19 @@ jobs:
         run: |
           cd dist 
           cp -rp ../etc .
-          7z a -r -tzip gitconvex-windows-v${{ secrets.TARGET_RELEASE_CHANNEL }}.zip *
+          7z a -r -tzip gitcthulu-windows-v${{ secrets.TARGET_RELEASE_CHANNEL }}.zip *
           ls -ltr
 
       - name: Github CLI Release for windows
         run: |
           echo ${{ secrets.CLI_AUTH_KEY }} > auth.txt
           gh auth login --with-token < auth.txt
-          gh release upload ${{ secrets.TARGET_RELEASE_CHANNEL }} ./dist/gitconvex-windows-v${{ secrets.TARGET_RELEASE_CHANNEL }}.zip --clobber
+          gh release upload ${{ secrets.TARGET_RELEASE_CHANNEL }} ./dist/gitcthulu-windows-v${{ secrets.TARGET_RELEASE_CHANNEL }}.zip --clobber
 
   # Build for Homebrew
   build-for-homebrew:
-    name: Build gitconvex Homebrew Tap bundle
-    needs: gitconvex-test
+    name: Build gitcthulu Homebrew Tap bundle
+    needs: gitcthulu-test
     runs-on: macos-latest
     steps:
       - name: Set up Go 1.x
@@ -211,20 +211,20 @@ jobs:
           brew install libgit2
           go get -v ./...
 
-      - name: Package gitconvex bundle
+      - name: Package gitcthulu bundle
         run: |
           make build
-          rm ./dist/gitconvex
+          rm ./dist/gitcthulu
 
       - name: Pick only required content for the Homebrew Tap
         run: |
           mkdir brew
           cp -rp api git global graph tests utils go.mod go.sum gqlgen.yml LICENSE server.go dist ./brew/
           cd brew 
-          tar -czf gitconvex-v${{ secrets.TARGET_RELEASE_CHANNEL }}-brew.tar.gz *
+          tar -czf gitcthulu-v${{ secrets.TARGET_RELEASE_CHANNEL }}-brew.tar.gz *
 
       - name: Github CLI Release for MacOS
         run: |
           echo ${{ secrets.CLI_AUTH_KEY }} > auth.txt
           gh auth login --with-token < auth.txt
-          gh release upload ${{ secrets.TARGET_RELEASE_CHANNEL }} ./brew/gitconvex-v${{ secrets.TARGET_RELEASE_CHANNEL }}-brew.tar.gz --clobber
+          gh release upload ${{ secrets.TARGET_RELEASE_CHANNEL }} ./brew/gitcthulu-v${{ secrets.TARGET_RELEASE_CHANNEL }}-brew.tar.gz --clobber

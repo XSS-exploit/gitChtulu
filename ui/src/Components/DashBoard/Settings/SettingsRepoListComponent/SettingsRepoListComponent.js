@@ -86,7 +86,7 @@ export default function SettingsRepoListComponent() {
           <div className="my-10 mx-auto font-sans font-medium text-gray-700 bg-gray-200 text-center p-10 rounded shadow w-3/4">
             {loading
               ? "Fetching repo list from the server..."
-              : "No repos are being managed by Gitconvex. You can add one from the dashboard"}
+              : "No repos are being managed by gitcthulu. You can add one from the dashboard"}
           </div>
         )}
       </>

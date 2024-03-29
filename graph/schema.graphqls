@@ -3,17 +3,17 @@
 # https://gqlgen.com/getting-started/
 
 """
-Returns the host OS and the current version of gitconvex
+Returns the host OS and the current version of gitcthulu
 """
 type HealthCheckParams{
-    "OS on which gitconvex is running"
+    "OS on which gitcthulu is running"
     os: String!
-    "Current version of gitconvex"
-    gitconvex: String!
+    "Current version of gitcthulu"
+    gitcthulu: String!
 }
 
 """
-Details about the repo data stored in gitconvex JSON data file
+Details about the repo data stored in gitcthulu JSON data file
 """
 type FetchRepoParams{
     "UUID based ID generated for the repo"
@@ -22,7 +22,7 @@ type FetchRepoParams{
     repoName: [String]!
     "Path of the git repository"
     repoPath: [String]!
-    "Timestamp at which the repo was added to gitconvex"
+    "Timestamp at which the repo was added to gitcthulu"
     timeStamp: [String]!
 }
 
@@ -128,12 +128,12 @@ type fileLineChangeResult{
 }
 
 """
-The current path of the data fle and the port to which gitconvex server listens
+The current path of the data fle and the port to which gitcthulu server listens
 """
 type settingsDataResults{
     "The path of the JSON data file"
     settingsDatabasePath: String!
-    "The current port that gitconvex is configured to listen"
+    "The current port that gitcthulu is configured to listen"
     settingsPortDetails: String!
 }
 
@@ -168,7 +168,7 @@ type UnPushedCommitResult{
 }
 
 type Query {
-    "To check if gitconvex API is reachable"
+    "To check if gitcthulu API is reachable"
     healthCheck: HealthCheckParams!
 
     "Fetches the details of the repo stored in the JSON repo data file"
@@ -246,7 +246,7 @@ type Query {
         fileName: String!
     ): fileLineChangeResult!
 
-    "Returns the current config data from gitconvex env_config JSON data file"
+    "Returns the current config data from gitcthulu env_config JSON data file"
     settingsData: settingsDataResults!
 
     "Compares two commits and returns the results"
@@ -289,7 +289,7 @@ type AddRepoParams{
 }
 
 """
-Result returned after attempting to delete a repo entry from the gitconvex data file
+Result returned after attempting to delete a repo entry from the gitcthulu data file
 """
 type deleteStatus{
     "String based status denoting the outcome of the delete"
@@ -335,7 +335,7 @@ type remoteMutationResult{
 }
 
 type Mutation {
-    "Adds a new repo to the gitconvex repo datastore"
+    "Adds a new repo to the gitcthulu repo datastore"
     addRepo(
         "The user defiend name of the repo. This will be used only for display purposes and nothing else"
         repoName: String!,
@@ -449,13 +449,13 @@ type Mutation {
         branch: String!
     ): String!
 
-    "To change the port to which gitconvex server listens"
+    "To change the port to which gitcthulu server listens"
     settingsEditPort(
-        "The new port number to which you wish gitconvex to listen to"
+        "The new port number to which you wish gitcthulu to listen to"
         newPort: String!
     ): String!
 
-    "To update the path of the JSON data file which holds the data of all the repositories tracked by gitconvex"
+    "To update the path of the JSON data file which holds the data of all the repositories tracked by gitcthulu"
     updateRepoDataFile(
         "The path of the new JSON data file"
         newDbFile: String!

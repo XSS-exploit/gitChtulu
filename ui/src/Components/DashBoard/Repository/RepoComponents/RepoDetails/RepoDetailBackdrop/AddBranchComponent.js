@@ -19,7 +19,7 @@ export default function AddBranchComponent(props) {
       method: "POST",
       data: {
         query: `
-            mutation GitConvexMutation{
+            mutation gitcthuluMutation{
               addBranch(repoId: "${repoId}", branchName: "${branchName}")
             }
           `,

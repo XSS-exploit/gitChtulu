@@ -2,8 +2,8 @@ package tests
 
 import (
 	"fmt"
-	"github.com/neel1996/gitconvex-server/git"
-	"github.com/neel1996/gitconvex-server/graph/model"
+	"github.com/neel1996/gitcthulu-server/git"
+	"github.com/neel1996/gitcthulu-server/graph/model"
 	"os"
 	"path"
 	"reflect"

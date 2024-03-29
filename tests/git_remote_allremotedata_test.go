@@ -3,7 +3,7 @@ package tests
 import (
 	"fmt"
 	git "github.com/libgit2/git2go/v31"
-	git2 "github.com/neel1996/gitconvex-server/git"
+	git2 "github.com/neel1996/gitcthulu-server/git"
 	assert2 "github.com/stretchr/testify/assert"
 	"os"
 	"path"

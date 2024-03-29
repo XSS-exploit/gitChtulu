@@ -8,5 +8,5 @@ export const PORT_GLOBAL_API =
 
 //CONFIG LIST
 export const CONFIG_HTTP_MODE = "http";
-export const API_GLOBAL_GQL = "gitconvexapi";
+export const API_GLOBAL_GQL = "gitcthuluapi";
 export const globalAPIEndpoint = `${CONFIG_HTTP_MODE}://${window.location.hostname}:${PORT_GLOBAL_API}/${API_GLOBAL_GQL}`;

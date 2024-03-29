@@ -1,6 +1,6 @@
 # Introduction
-GitConvex is a web app for managing your git repositories. It is supported by Linux, Mac OS and Windows. The [latest version](https://github.com/neel1996/gitconvex/releases) of GitConvex supports git features such as initializing and tracking a git repo, staging and unstaging changes, committing changes, pushing changes to the selected remote and so on.
-The main goal of this platform is to act as a web-based alternative for native git GUI clients and also to provide an option for managing git repos which are residing in servers with no GUI. Gitconvex is also available as a docker image along with the yaml files included in the repo for deploying it with k8s or docker swarm, which makes it a viable option for managing git repos residing within containers.
+gitcthulu is a web app for managing your git repositories. It is supported by Linux, Mac OS and Windows. The [latest version](https://github.com/neel1996/gitcthulu/releases) of gitcthulu supports git features such as initializing and tracking a git repo, staging and unstaging changes, committing changes, pushing changes to the selected remote and so on.
+The main goal of this platform is to act as a web-based alternative for native git GUI clients and also to provide an option for managing git repos which are residing in servers with no GUI. gitcthulu is also available as a docker image along with the yaml files included in the repo for deploying it with k8s or docker swarm, which makes it a viable option for managing git repos residing within containers.
 ## Table of Contents
 [Requirements](#requirements)<br>
 [Download Options](#download-options)<br>
@@ -19,25 +19,25 @@ If you wish to build the application from source then install,
 
 ## Download Options
 - **Option-1:** Directly clone the repo from GitHub
-`git clone https://github.com/neel1996/gitconvex`
+`git clone https://github.com/neel1996/gitcthulu`
 
-- **Option-2:** If you are into docker, then there is also a docker image available for gitconvex
-`docker pull itassistors/gitconvex`
+- **Option-2:** If you are into docker, then there is also a docker image available for gitcthulu
+`docker pull itassistors/gitcthulu`
 
-- **Option-3:** Downloading the zip file from the [releases](https://github.com/neel1996/gitconvex/releases).
+- **Option-3:** Downloading the zip file from the [releases](https://github.com/neel1996/gitcthulu/releases).
 
 ```
 ## Extract the downloaded zip file and execute the commands
 
-$ cd gitconvex
+$ cd gitcthulu
 
 # for Mac & Linux
 $ make build
-$ ./dist/gitconvex
+$ ./dist/gitcthulu
 
 # for Windows
 $ ./make.bat build
-$ ./dist/gitconvex.exe
+$ ./dist/gitcthulu.exe
 ```
 
 ## Features available
@@ -59,7 +59,7 @@ $ ./dist/gitconvex.exe
 
 - **Repositories** - To check tracked files changes, line-based changes with syntax highlighting and git operations (staging, un-staging, committing changes and pushing changed to remote)
 - **Compare** - To compare the branches and commits for the selected repository.
-- **Settings** - To check and edit internal data file, to remove a repo from GitConvex and to update the active port.
+- **Settings** - To check and edit internal data file, to remove a repo from gitcthulu and to update the active port.
 - **Help** - Includes documentation link and various options to report an issue or to submit feedback.
 
 ### Adding a new repo
@@ -152,19 +152,19 @@ In "Git Difference" click on the modified file to see the difference. The platfo
 ![commit-compare](https://user-images.githubusercontent.com/65342122/94800717-9d462e00-0402-11eb-84aa-9890bfea1f78.png)
 
 ## Settings
-- Settings in the left pane has three sections (Server data file, saved repos, Active GitConvex port number).
+- Settings in the left pane has three sections (Server data file, saved repos, Active gitcthulu port number).
 ![settings](https://user-images.githubusercontent.com/65342122/103557499-53755400-4ed9-11eb-9c37-7ffb7891fc2e.png)
 
 - Server data file stores repo details such as the repo path, timestamp and the unique ID assigned to each repo. The data file must be an accessible JSON file with read / write permissions set to it. Also make sure you enter the full path for the file. E.g: /opt/my_data/data-file.json
-- In the saved repos section, added repo(s) can be deleted permanently from GitConvex. 
+- In the saved repos section, added repo(s) can be deleted permanently from gitcthulu. 
 - Saved repo name can be changed in this section.
 
->Note that, this will only remove the repo from GitConvex records and it will not perform an actual folder delete operation
+>Note that, this will only remove the repo from gitcthulu records and it will not perform an actual folder delete operation
 
 - The port number can be updated to an available alternate port. Make sure that the port is not in use. The app needs to be restarted for the port change to take effect. 
 
 ## Help and Support
 
 - Visit help section if you're facing an issue or need any help. If you have any queries or feedback, then discuss it in "Discord" or report an issue in GitHub.
-- You can check the current version of Gitconvex by clicking on the update button in this section.
+- You can check the current version of gitcthulu by clicking on the update button in this section.
 ![help-and-support](https://user-images.githubusercontent.com/65342122/111640522-44d4e280-8822-11eb-9c6c-0b371f99797e.png)

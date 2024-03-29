@@ -1,5 +1,5 @@
-# gitconvex react project
-This is the front-end react source for [gitconvex](https://github.com/neel1996/gitconvex).
+# gitcthulu react project
+This is the front-end react source for [gitcthulu](https://github.com/neel1996/gitcthulu).
 
 <p align="center">
     <img src="https://user-images.githubusercontent.com/47709856/87220396-e72df380-c380-11ea-9b2b-e156402842bb.png" width="280">
@@ -7,7 +7,7 @@ This is the front-end react source for [gitconvex](https://github.com/neel1996/g
 
 ## Dependencies
 
-The dependency packages used by this project can be found [here](https://github.com/neel1996/gitconvex-ui/network/dependencies)
+The dependency packages used by this project can be found [here](https://github.com/neel1996/gitcthulu-ui/network/dependencies)
 
 - **🎨 Styling** - For styling, the project uses [tailwind](https://github.com/tailwindlabs/tailwindcss) css framework 
 - **📑 Syntax Highlighting** - [prismjs](https://github.com/PrismJS/prism) is used for syntax highlighting within the *Git Difference* and *CodeView* section
@@ -32,7 +32,7 @@ After cloning the repo, follow the steps mentioned below to setup the react app,
 - **Installing dependencies**
 
 ``` shell
-$ cd gitconvex-ui
+$ cd gitcthulu-ui
 $ npm install
 ```
 
@@ -42,7 +42,7 @@ The project uses `tailwindcss v2.0.2` for styling all the elements, so it is man
 
 ``` shell
 
-$ cd gitconvex-ui
+$ cd gitcthulu-ui
 $ npm install --global tailwindcss 
 
 $ npm run build:tailwind
@@ -51,7 +51,7 @@ $ npm run build:tailwind
 
 ```
 
-> **Note:** The final production build stage is configured to purge unused CSS selectors from the tailwind css file. So make sure you follow the [tailwind purge guidelines](https://tailwindcss.com/docs/controlling-file-size#writing-purgeable-html:~:text=Don't%20use%20string%20concatenation%20to%20create%20class%20names) to ensure that the required styles are included to the [production bundle](https://github.com/neel1996/gitconvex)
+> **Note:** The final production build stage is configured to purge unused CSS selectors from the tailwind css file. So make sure you follow the [tailwind purge guidelines](https://tailwindcss.com/docs/controlling-file-size#writing-purgeable-html:~:text=Don't%20use%20string%20concatenation%20to%20create%20class%20names) to ensure that the required styles are included to the [production bundle](https://github.com/neel1996/gitcthulu)
 
 - **Starting the app**
 
@@ -68,7 +68,7 @@ After completing the setup process, use `npm start` to start the react app
 ├── package.json
 ├── public
 │   ├── favicon.ico
-│   ├── gitconvex.png
+│   ├── gitcthulu.png
 │   ├── index.html
 │   ├── logo192.png
 │   ├── logo512.png
@@ -170,7 +170,7 @@ After completing the setup process, use `npm start` to start the react app
 │   │       └── LeftPane.css
 │   ├── actionStore.js
 │   ├── assets
-│   │   ├── gitconvex.png
+│   │   ├── gitcthulu.png
 │   │   └── icons
 │   ├── context.js
 │   ├── index.css

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This script copies the dependent libraries required for gitconvex to function properly to the /usr/* directory
+# This script copies the dependent libraries required for gitcthulu to function properly to the /usr/* directory
 # Make sure you run the script as sudo 
 
 # Extract libs from tar

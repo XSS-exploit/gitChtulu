@@ -1,10 +1,10 @@
 package api
 
 import (
-	"github.com/neel1996/gitconvex-server/git"
-	"github.com/neel1996/gitconvex-server/global"
-	"github.com/neel1996/gitconvex-server/graph/model"
-	"github.com/neel1996/gitconvex-server/utils"
+	"github.com/neel1996/gitcthulu-server/git"
+	"github.com/neel1996/gitcthulu-server/global"
+	"github.com/neel1996/gitcthulu-server/graph/model"
+	"github.com/neel1996/gitcthulu-server/utils"
 	"strings"
 )
 
